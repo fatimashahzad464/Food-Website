@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
@@ -6,8 +7,9 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+
   return (
-    <nav className="app__navbar">
+    <nav className="app__navbar fixed-navbar"> {/* Added fixed-navbar class */}
       <div className="app__navbar-logo">
         <img src={images.gericht} alt="app__logo" />
       </div>
@@ -20,8 +22,6 @@ const Navbar = () => {
       </ul>
       <div className="app__navbar-login">
         <a href="#login" className="p__opensans">Log In / Registration</a>
-        <div />
-        <a href="/" className="p__opensans">Book Table</a>
       </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
